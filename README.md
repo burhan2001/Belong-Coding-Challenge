@@ -24,6 +24,7 @@ Wait for few minutes for the stack creation to be completed.
 
 Wait for few minutes for the stack creation to be completed.
 
+
 ## Check httpd service
 
 ### Using AWS CLI
@@ -46,11 +47,12 @@ aws cloudformation describe-stacks --stack-name belong-code-challenge
 - Put it in a web browser.
 - You should be able to see the 'belong-test.html' as webpage.
 
-## Terminal access to the server
-- Because the webserver is placed in a private subnet, direct ssh access not possible to it.
-- A Bastion server has been created in public subnet via which ssh access can be made to to the webserver.
 
-- **Follow these steps:**
+## Terminal access to the server
+Because the webserver is placed in a private subnet, direct ssh access not is possible to it.
+A Bastion server has been created in public subnet via which ssh access can be made to to the webserver.
+
+**Follow these steps:**
 - In the Stack outputs check the **Value** of **Key** "KeyPairID"
 - Go to **AWS Systems Manager** -> **Parameter Store**
 - Find the parameter with above KeyPairID and click on it.
