@@ -49,7 +49,7 @@ aws cloudformation describe-stacks --stack-name belong-code-challenge
 
 
 ## Terminal access to the server
-Because the webserver is placed in a private subnet, direct ssh access not is possible to it.
+Because the webserver is placed in a private subnet, direct ssh access is not possible to it.
 A Bastion server has been created in public subnet via which ssh access can be made to to the webserver.
 
 **Follow these steps:**
