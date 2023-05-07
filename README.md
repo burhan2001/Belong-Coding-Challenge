@@ -1,4 +1,4 @@
-# Belong-Coding-Challenge
+# Belong Platform Engineering Coding Challenge
 
 ## Deploy the CloudFormation stack
 
@@ -23,3 +23,25 @@ Wait for few minutes for the stack creation to be completed.
 - You can name anything to the stack.
 
 Wait for few minutes for the stack creation to be completed.
+
+## Check httpd service
+
+### Using AWS CLI
+- Check the output of the CloudFormation stack using this command 
+
+```sh
+aws cloudformation describe-stacks --stack-name belong-code-challenge
+```
+
+> Note: If you changed the stack-name in previous step then please update it accordingly.
+
+- Come down to the **Outputs** part of the the command output
+- Copy the **OutputValue** from **OutputKey** "WebIP"
+- Put it in a web browser.
+- You should be able to see the 'belong-test.html' as webpage.
+
+### Using AWS Portal
+- Go to the **Outputs** tab of the ClouFormation stack.
+- Copy the **Value** of **Key** "WebIP"
+- Put it in a web browser.
+- You should be able to see the 'belong-test.html' as webpage.
