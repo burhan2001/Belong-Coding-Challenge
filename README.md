@@ -45,3 +45,32 @@ aws cloudformation describe-stacks --stack-name belong-code-challenge
 - Copy the **Value** of **Key** "WebIP"
 - Put it in a web browser.
 - You should be able to see the 'belong-test.html' as webpage.
+
+## Terminal access to the server
+- Because the webserver is placed in a private subnet, direct ssh access not possible to it.
+- A Bastion server has been created in public subnet via which ssh access can be made to to the webserver.
+- Follow these steps:
+
+### Using AWS CLI
+- 
+
+```sh
+aws cloudformation describe-stacks --stack-name belong-code-challenge
+```
+
+> Note: If you changed the stack-name in previous step then please update it accordingly.
+
+- Come down to the **Outputs** part of the the command output
+- Copy the **OutputValue** from **OutputKey** "WebIP"
+- Put it in a web browser.
+- You should be able to see the 'belong-test.html' as webpage.
+
+### Using AWS Portal
+- In the Stack outputs check the **Value** of **Key** "KeyPairID"
+- Go to **AWS Systems Manager** -> **Parameter Store**
+- Find the parameter with above KeyPairID and click on it.
+- Copy the value of this parameter and save it as .pem file.
+- In the Stack outputs check the **Value** of **Key** "BastionEIP"
+- Now ssh the the Bastion Server to the above BastionEIP using the .pem file as key file and **ec2-user** as Username.
+- To login the webserver, get the private IP of the webserver from the Stack outputs **Value** of **Key** "WebServerIP"
+- ssh the "WebServerIP" from inside Bastion server.
