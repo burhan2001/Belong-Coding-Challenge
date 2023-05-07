@@ -1,5 +1,9 @@
 # Belong Platform Engineering Coding Challenge
 
+- [Deploy the CloudFormation stack]
+- [Check httpd service]
+- [Terminal access to the server]
+
 ## Deploy the CloudFormation stack
 
 ### Using AWS CLI
@@ -61,3 +65,7 @@ A Bastion server has been created in public subnet via which ssh access can be m
 - Now ssh the the Bastion Server to the above BastionEIP using the .pem file as key file and **ec2-user** as Username.
 - To login the webserver, get the private IP of the webserver from the Stack outputs **Value** of **Key** "WebServerIP"
 - ssh the "WebServerIP" from inside Bastion server.
+
+[Deploy the CloudFormation stack]: <https://github.com/burhan2001/Belong-Coding-Challenge#deploy-the-cloudformation-stack>
+[Check httpd service]: <https://github.com/burhan2001/Belong-Coding-Challenge#check-httpd-service>
+[Terminal access to the server]: <https://github.com/burhan2001/Belong-Coding-Challenge#terminal-access-to-the-server>
